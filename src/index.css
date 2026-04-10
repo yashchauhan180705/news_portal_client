@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-charcoal-900 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-2.5 rounded-lg font-semibold
+           hover:bg-primary-700 active:bg-primary-800
+           transition-all duration-200 ease-in-out
+           shadow-sm hover:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-charcoal-800 text-white px-6 py-2.5 rounded-lg font-semibold
+           hover:bg-charcoal-900 active:bg-charcoal-900
+           transition-all duration-200 ease-in-out
+           shadow-sm hover:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-charcoal-500 focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 px-6 py-2.5 rounded-lg font-semibold
+           hover:bg-primary-600 hover:text-white
+           transition-all duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply text-charcoal-700 px-4 py-2 rounded-lg font-medium
+           hover:bg-charcoal-100 active:bg-charcoal-200
+           transition-all duration-200 ease-in-out;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-charcoal-300
+           bg-white text-charcoal-900 placeholder-charcoal-400
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-charcoal-200
+           shadow-sm hover:shadow-lg
+           transition-all duration-300 ease-in-out;
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-1;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-premium {
+    @apply badge bg-gradient-to-r from-amber-400 to-yellow-500 text-amber-900;
+  }
+
+  .badge-category {
+    @apply badge bg-primary-50 text-primary-700 border border-primary-200;
+  }
+
+  .skeleton {
+    @apply bg-charcoal-200 rounded animate-pulse;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-charcoal-100 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-charcoal-400 rounded-full hover:bg-charcoal-500;
+  }
+}
