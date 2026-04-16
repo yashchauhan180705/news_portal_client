@@ -99,3 +99,31 @@
     @apply bg-charcoal-400 rounded-full hover:bg-charcoal-500;
   }
 }
+
+/* Article content typography overrides */
+.prose p {
+  margin-bottom: 1.5em !important;
+  line-height: 1.9 !important;
+}
+
+.prose br {
+  display: block;
+  content: '';
+  margin-top: 1em;
+}
+
+.prose p + p {
+  margin-top: 1.5em !important;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 2em !important;
+  margin-bottom: 0.75em !important;
+}
+
+.prose blockquote {
+  margin-top: 1.5em !important;
+  margin-bottom: 1.5em !important;
+}

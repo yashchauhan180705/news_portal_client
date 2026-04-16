@@ -114,12 +114,18 @@ const ArticleView = () => {
 
         {/* Content */}
         <div
-          className="prose prose-lg max-w-none text-charcoal-800 leading-relaxed
+          className="prose prose-lg max-w-none text-charcoal-800
                      prose-headings:font-display prose-headings:text-charcoal-900
-                     prose-p:mb-6 prose-p:text-charcoal-700
+                     prose-p:mb-6 prose-p:text-charcoal-700 prose-p:leading-[1.9]
                      prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline
                      prose-strong:text-charcoal-900
+                     prose-li:my-2
                      font-serif"
+          style={{
+            lineHeight: '1.9',
+            wordSpacing: '0.03em',
+            letterSpacing: '0.01em',
+          }}
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
 

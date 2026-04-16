@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import API, { resolveMediaUrl } from '../services/api';
 import { Loader } from '../components/Loader';
 import {
   FileText,
   Calendar,
   Download,
-  ExternalLink,
+  Eye,
   Newspaper,
   ChevronLeft,
   ChevronRight,
@@ -122,16 +123,24 @@ const EPapers = () => {
                         <Calendar className="w-3.5 h-3.5" />
                         {formatDate(epaper.publishDate)}
                       </p>
-                      <a
-                        href={getPdfUrl(epaper)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 text-sm font-semibold group"
-                      >
-                        <Download className="w-4 h-4 group-hover:animate-bounce" />
-                        View PDF
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
+                      <div className="flex items-center gap-3">
+                        <Link
+                          to={`/epapers/view?url=${encodeURIComponent(getPdfUrl(epaper))}&title=${encodeURIComponent(epaper.title)}`}
+                          className="inline-flex items-center gap-1.5 text-primary-600 hover:text-primary-700 text-sm font-semibold group"
+                        >
+                          <Eye className="w-4 h-4" />
+                          Read
+                        </Link>
+                        <a
+                          href={getPdfUrl(epaper)}
+                          download
+                          className="inline-flex items-center gap-1.5 text-charcoal-500 hover:text-charcoal-700 text-sm font-medium group"
+                          title="Download PDF"
+                        >
+                          <Download className="w-4 h-4 group-hover:animate-bounce" />
+                          Download
+                        </a>
+                      </div>
                     </div>
                   </div>
                 );

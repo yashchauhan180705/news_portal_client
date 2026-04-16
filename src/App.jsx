@@ -6,6 +6,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import ArticleView from './pages/ArticleView';
 import EPapers from './pages/EPapers';
+import EPaperViewer from './pages/EPaperViewer';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<><Home /><Footer /></>} />
             <Route path="/article/:id" element={<><ArticleView /><Footer /></>} />
             <Route path="/epapers" element={<><EPapers /><Footer /></>} />
+            <Route path="/epapers/view" element={<EPaperViewer />} />
             <Route path="/charchapatra" element={<><Charchapatra /><Footer /></>} />
             <Route path="/subscribe" element={<><Subscribe /><Footer /></>} />
             <Route path="/login" element={<Login />} />
